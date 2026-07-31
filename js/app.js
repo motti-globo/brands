@@ -68,9 +68,21 @@ function renderProducts(list){
                     ${product.name}
                 </div>
 
-                <div class="product-price">
-                    ₪${product.price}
-                </div>
+             <div class="product-price-box">
+
+    <div class="product-price">
+        ₪${product.price}
+    </div>
+
+    <div class="old-price">
+        ₪${product.oldPrice}
+    </div>
+
+    <div class="discount">
+        ${Math.round((1 - product.price / product.oldPrice) * 100)}%-
+    </div>
+
+</div>
 
                 <div class="stock ${product.stock ? "in" : "out"}">
                     ${product.stock ? "במלאי" : "אזל מהמלאי"}
