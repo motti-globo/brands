@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "brand": "Nike",
+    "category": "חולצות",
+    "name": "Nike Dri-FIT T-Shirt",
+    "price": 149,
+    "oldPrice": 249,
+    "stock": true,
+    "image": "images/products/nike-shirt-1.jpg"
+  },
+  {
+    "id": 2,
+    "brand": "Tommy Hilfiger",
+    "category": "חולצות",
+    "name": "Tommy Hilfiger Polo",
+    "price": 179,
+    "oldPrice": 329,
+    "stock": true,
+    "image": "images/products/tommy-polo-1.jpg"
+  },
+  {
+    "id": 3,
+    "brand": "Calvin Klein",
+    "category": "הלבשה תחתונה",
+    "name": "Calvin Klein Boxer",
+    "price": 89,
+    "oldPrice": 149,
+    "stock": false,
+    "image": "images/products/ck-boxer-1.jpg"
+  }
+]
