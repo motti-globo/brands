@@ -1,68 +1,36 @@
-// IMPORT מותגים
+async function loadProducts() {
 
-const brands = [
-    "Nike",
-    "Adidas",
-    "Tommy Hilfiger",
-    "Calvin Klein",
-    "Polo Ralph Lauren",
-    "Columbia",
-    "Puma",
-    "Champion",
-    "Nautica"
-];
+    const response = await fetch("data/products.json");
 
-const products = [
-    {
-        id: 1,
-        brand: "Nike",
-        name: "חולצת Nike",
-        price: "₪149",
-        stock: true,
-        image: "https://picsum.photos/400/500?random=1"
-    },
-    {
-        id: 2,
-        brand: "Tommy Hilfiger",
-        name: "טי שירט Tommy",
-        price: "₪179",
-        stock: true,
-        image: "https://picsum.photos/400/500?random=2"
-    },
-    {
-        id: 3,
-        brand: "Calvin Klein",
-        name: "בוקסר Calvin Klein",
-        price: "₪89",
-        stock: false,
-        image: "https://picsum.photos/400/500?random=3"
-    },
-    {
-        id: 4,
-        brand: "Polo Ralph Lauren",
-        name: "חולצת פולו",
-        price: "₪199",
-        stock: true,
-        image: "https://picsum.photos/400/500?random=4"
-    }
-];
+    const products = await response.json();
 
-const brandsContainer = document.getElementById("brands-list");
-const productsContainer = document.getElementById("products-grid");
+    const brands = [...new Set(products.map(p => p.brand))];
 
-if (brandsContainer) {
+    const brandsList = document.getElementById("brands-list");
+    const productsGrid = document.getElementById("products-grid");
+
+    brandsList.innerHTML = "";
+
     brands.forEach(brand => {
-        brandsContainer.innerHTML += `
+
+        brandsList.innerHTML += `
             <div class="brand-card">${brand}</div>
         `;
-    });
-}
 
-if (productsContainer) {
+    });
+
+    productsGrid.innerHTML = "";
+
     products.forEach(product => {
-        productsContainer.innerHTML += `
+
+        productsGrid.innerHTML += `
+
             <div class="product-card">
-                <img class="product-image" src="${product.image}" alt="${product.name}">
+
+                <img
+                    src="${product.image}"
+                    class="product-image"
+                    alt="${product.name}">
 
                 <div class="product-info">
 
@@ -75,7 +43,7 @@ if (productsContainer) {
                     </div>
 
                     <div class="product-price">
-                        ${product.price}
+                        ₪${product.price}
                     </div>
 
                     <div class="stock ${product.stock ? "in" : "out"}">
@@ -83,7 +51,13 @@ if (productsContainer) {
                     </div>
 
                 </div>
+
             </div>
+
         `;
+
     });
+
 }
+
+loadProducts();
