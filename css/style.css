@@ -241,7 +241,28 @@ section h2{
     font-weight:900;
     margin-bottom:20px;
 }
+.product-price-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
 
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:18px;
+}
+
+.discount{
+    background:#d62828;
+    color:#fff;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+}
 .stock{
     display:inline-block;
     padding:6px 12px;
